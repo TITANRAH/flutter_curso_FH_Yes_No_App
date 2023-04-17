@@ -3,7 +3,7 @@ import 'package:yes_no_app/domain/entities/message.dart';
 
 class HerMessageBubble extends StatelessWidget {
   final Message message;
-  
+
   const HerMessageBubble({super.key, required this.message});
 
   @override
@@ -13,6 +13,7 @@ class HerMessageBubble extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        const Text('hola'),
         Container(
           decoration: BoxDecoration(
               color: colors.secondary, borderRadius: BorderRadius.circular(20)),
@@ -29,7 +30,9 @@ class HerMessageBubble extends StatelessWidget {
         const SizedBox(
           height: 5,
         ),
-        _ImageBubble(image: message.imageUrl!,),
+        _ImageBubble(
+          image: message.imageUrl!,
+        ),
         const SizedBox(
           height: 10,
         ),
@@ -41,9 +44,8 @@ class HerMessageBubble extends StatelessWidget {
 class _ImageBubble extends StatelessWidget {
   final String image;
 
-  const _ImageBubble({super.key, required this.image});
+  const _ImageBubble({required this.image});
 
-  
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
